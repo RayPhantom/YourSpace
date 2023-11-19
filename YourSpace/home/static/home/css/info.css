@@ -1,0 +1,42 @@
+h3{
+	margin-top: 80px;
+	text-align: center;
+	font-size: 240%;
+	margin-bottom: 20px;
+}
+
+.maininfo{
+	display: grid;
+	grid-template-columns: 1fr 4fr;
+	margin: 30px;
+	gap: 30px;
+}
+
+.infosect{
+	padding: 20px;
+	background-color: rgba(36, 45, 77, 0.7);
+	border-radius: 10px;
+}
+
+.linkli{
+	margin-bottom: 8px;
+}
+
+.infolink{
+	display: block;
+	padding: 8px 10px;
+}
+
+hr{
+	margin-top: 4px;
+	border: 1px solid #a38cff;
+}
+
+.curinfo{
+	background-color: rgba(49, 6, 59, 0.5);
+	border-radius: 5px;
+}
+
+.cont p{
+	margin: 10px 0;
+}
