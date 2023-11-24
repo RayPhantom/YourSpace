@@ -69,43 +69,10 @@ main{
 	font-weight: bold;
 }
 
-.stext{
-
-}
-
-.updbut{
-	appearance: none;
-	border: 0;
-	border-radius: 50%;
-	color: rgb(69, 176, 247);
-	background: none;
-	font-size: 18px;
-}
-
-.updnvis{
+.covset{
 	display: none;
 }
 
-.updvis{
-	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-    position: absolute;
-	background-color: rgba(36, 45, 77, 0.7);
-	border-radius: 0 0 10px 10px;
-	right: 0;
-}
-
-.updtitle{
-	padding: 20px 140px;
-	background-color: rgba(7, 11, 20, 0.8);
-	border-radius: 0;
-}
-
-.updlist{
-	padding: 10px;
-	min-height: 80px
-}
-
-.upddescr{
-	margin-bottom: 10px;
+.pagecover:hover .covset{
+	display: block;
 }

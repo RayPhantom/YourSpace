@@ -18,17 +18,17 @@ def start(request):
 	context = {
 		'title': "Let's start!", 
 	} 
-	return render(request, 'home/start.html', context = context)
+	return render(request, 'home/homepages/start.html', context = context)
 
 def guides(request): 
 	context = {
 		'title': "Guides & Tutorials", 
 	} 
-	return render(request, 'home/guides.html', context = context)
+	return render(request, 'home/homepages/guides.html', context = context)
 
 class signin(LoginView):
 	form_class = signinform
-	template_name = 'home/signin.html'
+	template_name = 'home/homepages/signin.html'
 	extra_context = {'title': "Sign In"}
 
 	def get_success_url(self):
@@ -39,7 +39,7 @@ def userredirect(request):
 
 class signup(CreateView):
 	form_class = signupform
-	template_name = 'home/signup.html'
+	template_name = 'home/homepages/signup.html'
 	success_url = reverse_lazy('signin')
 	extra_context = {'title': "Sign Up"}
 
@@ -55,7 +55,7 @@ class signup(CreateView):
 
 
 
-def Profil(request, slug):
+def Profile(request, slug):
 	p_user = get_object_or_404(User, slug=slug)
 
 	if request.method == 'POST':
@@ -108,7 +108,7 @@ def Profil(request, slug):
 		'form1': form1,
 	}
 
-	return render(request, 'home/mainprofile.html', context=context)
+	return render(request, 'home/profilepages/mainprofile.html', context=context)
 
 def profileedit(request):
 	if request.method == 'POST':
@@ -129,7 +129,7 @@ def profileedit(request):
 		'form': formedit,
 	}
 
-	return render(request, 'home/profileedit.html', context = context)		
+	return render(request, 'home/profilepages/profileedit.html', context = context)		
 
 def delete(request, o_id):
 	obj = ProfileContent.objects.get(pk=o_id)
@@ -147,7 +147,7 @@ def delete(request, o_id):
 
 class info_focus(DetailView):
 	model = Info
-	template_name = 'home/infofocus.html'
+	template_name = 'home/homepages/infofocus.html'
 	context_object_name = "post"
 
 	def get_context_data(self, *, object_list=None, **kwargs):

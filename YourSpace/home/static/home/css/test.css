@@ -287,3 +287,14 @@ h1{
 .avaform{
 	
 }
+
+.covset{
+	display: none;
+	position: absolute;
+	right: 40px;
+	top: 80px;
+}
+
+.pagecover:hover .covset{
+	display: block;
+}

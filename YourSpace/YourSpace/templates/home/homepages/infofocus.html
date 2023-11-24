@@ -1,0 +1,49 @@
+{% extends 'home/homepages/base.html' %}
+{% load static %}
+{% load i18n %}
+{% load home_tags %}
+
+{% block headlink %}
+	<link rel="stylesheet" type="text/css" href="{% static 'home/css/info.css' %}">
+{% endblock%}
+
+{% block content %}
+{% getInfo as Info %}
+	<main>
+
+
+		<h3>{% trans 'Info' %}</h3>
+
+		<div class="maininfo">
+			<ul class="infosect">
+				{% for a in Info %}
+					{% if post.pk == a.pk %}
+						<li class="linkli curinfo">
+							<div class="stext infolink">
+								{{ a.title }}
+								<hr>
+							</div>
+						</li>
+					{% else %}
+						<li class="linkli">
+							<a class="infolink" href="{{ a.get_absolute_url }}">
+								{{ a.title }}
+								<hr>
+							</a>
+						</li>
+					{% endif %}
+					
+				{% endfor %}
+			</ul>
+
+			<div class="infosect">
+				<h2 class="stext">{{ post.title }}</h2>
+				<hr>
+				<div class="cont">
+					<p>{{ post.content | linebreaks }}</p>
+				</div>
+			</div>
+		</div>
+
+	</main>
+{% endblock %}

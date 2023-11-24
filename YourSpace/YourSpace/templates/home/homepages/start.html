@@ -1,0 +1,24 @@
+{% extends 'home/homepages/base.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block headlink %}
+	<link rel="stylesheet" type="text/css" href="{% static 'home/css/start.css' %}">
+{% endblock%}
+
+{% block content %}
+	<main>
+
+		<h3>{% trans 'Your personal work' %}<span class="stext">{%trans 'space'%}</span>!</h3>
+
+		<div class="content">
+			<div>
+				<h2 class="stext">О сайте</h2>
+				<hr>
+				<h4>Сайт YourSpace позволит вам организовать свою работу и вести заметки и записи</h4>
+				<h4>Подробнее в разделах "Инфо" и "Инструкция пользователя"</h4>
+			</div>
+			<div class="simg"><img src="{% static 'home/img/mainex.jpg' %}"></div>
+		</div>
+	</main>
+{% endblock %}
