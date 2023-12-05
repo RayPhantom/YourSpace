@@ -1,0 +1,34 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>YourSpace – {{ title }}</title>
+	<link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+	{% block headlinks %}
+	{% endblock %}
+</head>
+<body>
+	<header>
+		<a class="mainlink" href="{% url 'start' %}">
+			<div>
+				logo
+			</div>
+			<h2><span class="stext">Your</span>Space</h2>
+		</a>
+
+		<ul class="headerlinks stext">
+			<li class="signInLink"><a href="{% url 'signin' %}">Sign In</a></li>
+		</ul>
+	</header>
+	<main>
+		{% block maincontent %}
+		{% endblock %}
+	</main>
+	<footer>
+		Developed by: <a href="https://github.com/RayPhantom" target="_blank">RayPhantom(GitHub)</a>
+	</footer>
+</body>
+</html>

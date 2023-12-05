@@ -12,7 +12,6 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 
 from pathlib import Path
 import os, sys
-from django.utils.translation import gettext_lazy
 
 PROJECT_ROOT = os.path.dirname(__file__)
 
@@ -24,41 +23,34 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-=vje4#i9gc1%#ddoe=p+9xg6r4rj2czx8n546&pykyb)6+jfg_'
+SECRET_KEY = 'django-insecure-cap3r1p7*o$rzj953-hzsznntci2tjjdta&4f%u##_2n3^cd^!'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1']
+ALLOWED_HOSTS = []
 
 
 # Application definition
 
 INSTALLED_APPS = [
-    'modeltranslation',
-    "admin_interface", #adm
-    "colorfield", #adm
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    "debug_toolbar",
-    'captcha',
-    'home.apps.HomeConfig',
+    'ysmain.apps.YsmainConfig',
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
-    'django.middleware.locale.LocaleMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    "debug_toolbar.middleware.DebugToolbarMiddleware",
 ]
 
 ROOT_URLCONF = 'YourSpace.urls'
@@ -95,8 +87,7 @@ DATABASES = {
     }
 }
 
-AUTH_USER_MODEL = 'home.User'
-
+AUTH_USER_MODEL = 'ysmain.User'
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
@@ -120,7 +111,6 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/4.1/topics/i18n/
 
-
 LANGUAGE_CODE = 'en-us'
 
 TIME_ZONE = 'UTC'
@@ -128,19 +118,6 @@ TIME_ZONE = 'UTC'
 USE_I18N = True
 
 USE_TZ = True
-
-LANGUAGES = [
-    ('ru', ('Russian')),
-    ('en', ('English')),
-]
-
-MODELTRANSLATION_DEFAULT_LANGUAGE = 'en'
-MODELTRANSLATION_PREPOPULATE_LANGUAGE = 'en'
-
-
-LOCALE_PATHS = [
-    BASE_DIR / 'locale'
-]
 
 
 # Static files (CSS, JavaScript, Images)
@@ -157,15 +134,3 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
-
-
-INTERNAL_IPS = [
-    #"127.0.0.1",
-]
-
-CACHES = {
-    "default": {
-        "BACKEND": "django.core.cache.backends.filebased.FileBasedCache",
-        "LOCATION": os.path.join(BASE_DIR, 'YS_cache'),
-    }
-}
